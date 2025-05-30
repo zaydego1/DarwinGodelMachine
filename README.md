@@ -4,9 +4,9 @@
 
 <p align="center">
   <a href="https://github.com/jennyzzt/dgm/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=for-the-badge"></a>
-  <a href=""><img src="https://img.shields.io/badge/arXiv-xxxx.xxxx-b31b1b.svg?logo=arxiv&style=for-the-badge"></a>
-  <a href=""><img src="https://img.shields.io/badge/-Website-%238D6748?style=for-the-badge&logo=Website&logoColor=white"></a>
-  <a href=""><img src="https://img.shields.io/badge/twitter-%230077B5.svg?&style=for-the-badge&logo=twitter&logoColor=white&color=00acee"></a>
+  <a href="https://arxiv.org/abs/2505.22954"><img src="https://img.shields.io/badge/arXiv-2505.22954-b31b1b.svg?logo=arxiv&style=for-the-badge"></a>
+  <a href="https://sakana.ai/dgm/"><img src="https://img.shields.io/badge/-Blog-%238D6748?style=for-the-badge&logo=Website&logoColor=white"></a>
+  <a href="https://x.com/SakanaAILabs/status/1928272612431646943"><img src="https://img.shields.io/badge/twitter-%230077B5.svg?&style=for-the-badge&logo=twitter&logoColor=white&color=00acee"></a>
   <a href="https://drive.google.com/drive/folders/1Kcu9TbIa9Z50pJ7S6hH9omzzD1pxIYZC?usp=sharing"><img src="https://img.shields.io/badge/Experiment%20Logs-4285F4?style=for-the-badge&logo=googledrive&logoColor=white"></a>
 </p>
 
@@ -94,10 +94,10 @@ The evaluation framework implementations are based on the [SWE-bench](https://gi
 ## Citing
 If you find this project useful, please consider citing:
 ```bibtex
-@article{xxx,
-title={xxx},
-author={xxx},
-journal={xxx},
-year={2025}
+@article{zhang2025darwin,
+  title={Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents},
+  author={Zhang, Jenny and Hu, Shengran and Lu, Cong and Lange, Robert and Clune, Jeff},
+  journal={arXiv preprint arXiv:2505.22954},
+  year={2025}
 }
 ```
