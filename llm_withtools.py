@@ -6,7 +6,7 @@ import backoff
 import openai
 import copy
 
-from llm import create_client, get_response_from_llm
+from llm import create_client, get_response_from_llm, get_response_from_llm_with_context
 from prompts.tooluse_prompt import get_tooluse_prompt
 from tools import load_all_tools
 
@@ -296,7 +296,7 @@ def chat_with_agent_manualtools(msg, model, msg_history=None, logging=print):
 
         # Call API
         logging(f"Input: {msg}")
-        response, new_msg_history = get_response_from_llm(
+        response, new_msg_history = get_response_from_llm_with_context(
             msg=msg,
             client=client,
             model=client_model,
@@ -314,10 +314,18 @@ def chat_with_agent_manualtools(msg, model, msg_history=None, logging=print):
             tool_input = tool_use['tool_input']
             tool_result = process_tool_call(tools_dict, tool_name, tool_input)
 
+            # Cache important tool results for DeepSeek R1 (full results, let cache manager handle sizing)
+            if client_model == "deepseek-r1:14b":
+                from llm import get_context_manager
+                context_mgr = get_context_manager(client_model)
+                # Store full tool result with high priority, cache manager will trim if needed
+                full_tool_context = f"Tool: {tool_name}\nInput: {tool_input}\nResult: {tool_result}"
+                context_mgr.add_to_cache(full_tool_context, "tool_result", priority=2)
+
             # Get tool response
             tool_msg = f'Tool Used: {tool_name}\nTool Input: {tool_input}\nTool Result: {tool_result}'
             logging(tool_msg)
-            response, new_msg_history = get_response_from_llm(
+            response, new_msg_history = get_response_from_llm_with_context(
                 msg=tool_msg,
                 client=client,
                 model=client_model,
