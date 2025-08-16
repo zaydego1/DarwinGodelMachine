@@ -31,3 +31,5 @@ async_timeout
 python-chess
 stockfish
 
+# monitoring system
+psutil

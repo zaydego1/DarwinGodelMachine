@@ -1,0 +1,87 @@
+{
+  "validation_start": "2025-08-16T13:16:59.744858",
+  "tests_run": {
+    "Import Validation": {
+      "passed": true,
+      "results": [
+        "\u2705 llm module imported successfully",
+        "\u2705 llm_withtools module imported successfully",
+        "\u2705 chess_position tool imported successfully",
+        "\u2705 chess_moves tool imported successfully",
+        "\u2705 lichess_puzzle tool imported successfully",
+        "\u2705 bash tool imported successfully",
+        "\u2705 edit tool imported successfully",
+        "\u2705 ChessAgent imported successfully",
+        "\u2705 chess_self_improve imported successfully",
+        "\u2705 DGMChessMonitor imported successfully",
+        "\u2705 MetricsCollector imported successfully",
+        "\u2705 python-chess library imported successfully",
+        "\u2705 psutil library imported successfully"
+      ],
+      "timestamp": "2025-08-16T13:17:00.018914"
+    },
+    "Tool Validation": {
+      "passed": false,
+      "results": [
+        "\u274c chess_position tool returned unexpected result",
+        "\u274c chess_moves tool returned unexpected result",
+        "\u274c bash tool returned unexpected result"
+      ],
+      "timestamp": "2025-08-16T13:17:00.225268"
+    },
+    "Model Access": {
+      "passed": true,
+      "results": [
+        "\u2705 DeepSeek R1 model accessible and responding"
+      ],
+      "timestamp": "2025-08-16T13:17:08.501016"
+    },
+    "Enhanced Tool System": {
+      "passed": true,
+      "results": [
+        "\u2705 Enhanced tool system working - tools were called",
+        "\u2705 Enhanced tool system returning conversation history"
+      ],
+      "timestamp": "2025-08-16T13:17:40.237286"
+    },
+    "Directory Structure": {
+      "passed": true,
+      "results": [
+        "\u2705 Directory 'archive' exists/created successfully",
+        "\u2705 Directory 'baselines' exists/created successfully",
+        "\u2705 Directory 'metrics' exists/created successfully",
+        "\u2705 Directory 'monitoring' exists/created successfully",
+        "\u2705 Directory 'scripts' exists/created successfully",
+        "\u2705 Directory 'tools' exists/created successfully",
+        "\u2705 Directory 'evaluation' exists/created successfully",
+        "\u2705 Directory 'utils' exists/created successfully",
+        "\u2705 Directory 'prompts' exists/created successfully"
+      ],
+      "timestamp": "2025-08-16T13:17:40.237637"
+    },
+    "System Resources": {
+      "passed": true,
+      "results": [
+        "\ud83d\udcca Total RAM: 48.0GB",
+        "\ud83d\udcca Available RAM: 17.3GB",
+        "\u2705 Sufficient RAM for 2-3 parallel agents",
+        "\ud83d\udcca Available disk space: 1679.4GB",
+        "\u2705 Sufficient disk space for evolution data",
+        "\ud83d\udcca CPU cores: 14",
+        "\u2705 Excellent CPU capacity for parallel processing"
+      ],
+      "timestamp": "2025-08-16T13:17:40.237827"
+    },
+    "Chess Analysis": {
+      "passed": true,
+      "results": [
+        "\u2705 System can perform chess analysis"
+      ],
+      "timestamp": "2025-08-16T13:20:14.222435"
+    }
+  },
+  "overall_status": "FAILED",
+  "ready_for_training": false,
+  "validation_end": "2025-08-16T13:20:14.222458",
+  "duration_seconds": 194.4776
+}

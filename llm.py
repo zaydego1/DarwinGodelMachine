@@ -678,3 +678,36 @@ def get_response_from_llm_with_context(
     return get_response_from_llm(
         msg, client, model, system_message, print_debug, msg_history, temperature
     )
+
+
+def chat_with_model(msg, model, msg_history=None, system_message="", temperature=0.7, print_debug=False):
+    """
+    Convenience function for simple chat interactions.
+    
+    Args:
+        msg: The user message
+        model: Model name (e.g., "deepseek-r1:14b")
+        msg_history: Previous conversation history
+        system_message: System message
+        temperature: Sampling temperature
+        print_debug: Whether to print debug info
+        
+    Returns:
+        str: The model's response
+    """
+    if msg_history is None:
+        msg_history = []
+    
+    client, client_model = create_client(model)
+    
+    content, new_msg_history = get_response_from_llm_with_context(
+        msg=msg,
+        client=client,
+        model=client_model,
+        system_message=system_message,
+        print_debug=print_debug,
+        msg_history=msg_history,
+        temperature=temperature
+    )
+    
+    return content
