@@ -8,6 +8,7 @@ import copy
 
 from llm import create_client, get_response_from_llm, get_response_from_llm_with_context
 from prompts.tooluse_prompt import get_tooluse_prompt
+from prompts.deepseek_tooluse_prompt import get_deepseek_tooluse_prompt, get_ollama_tooluse_prompt
 from tools import load_all_tools
 
 CLAUDE_MODEL = 'bedrock/us.anthropic.claude-3-5-sonnet-20241022-v2:0'
@@ -66,11 +67,14 @@ def get_response_withtools(
 
 def check_for_tool_use(response, model=''):
     """
-    Checks if the response contains a tool call.
+    Enhanced tool parsing that supports multiple formats:
+    1. TOOL_CALL: {"tool": "tool_name", "args": {"param": "value"}}
+    2. <tool_use>{'tool_name': 'name', 'tool_input': {...}}</tool_use>
+    3. Native Claude/OpenAI tool calling
     """
     if 'claude' in model:
         # Claude, check for stop_reason in response
-        if response.stop_reason == "tool_use":
+        if hasattr(response, 'stop_reason') and response.stop_reason == "tool_use":
             tool_use_block = next(block for block in response.content if block.type == "tool_use")
             return {
                 'tool_id': tool_use_block.id,
@@ -92,15 +96,48 @@ def check_for_tool_use(response, model=''):
             }
 
     else:
-        # Any other LLM, response is str, check for <tool_use> tag in response
-        pattern = r'<tool_use>(.*?)</tool_use>'
-        match = re.search(pattern, response, re.DOTALL)
-        if match:
-            tool_use_str = match.group(1).strip()
+        # For other LLMs, check for both new and legacy formats
+        response_text = response if isinstance(response, str) else str(response)
+        
+        # 1. Check for new TOOL_CALL: format first
+        tool_call_pattern = r'TOOL_CALL:\s*(\{.*?\})'
+        tool_call_match = re.search(tool_call_pattern, response_text, re.DOTALL)
+        
+        if tool_call_match:
+            try:
+                tool_call_json = json.loads(tool_call_match.group(1))
+                if isinstance(tool_call_json, dict) and 'tool' in tool_call_json and 'args' in tool_call_json:
+                    return {
+                        'tool_name': tool_call_json['tool'],
+                        'tool_input': tool_call_json['args']
+                    }
+            except (json.JSONDecodeError, KeyError) as e:
+                # Try to extract with more robust parsing
+                try:
+                    # Handle single quotes or other formatting issues
+                    cleaned_json = tool_call_match.group(1).replace("'", '"')
+                    tool_call_json = json.loads(cleaned_json)
+                    if isinstance(tool_call_json, dict) and 'tool' in tool_call_json and 'args' in tool_call_json:
+                        return {
+                            'tool_name': tool_call_json['tool'],
+                            'tool_input': tool_call_json['args']
+                        }
+                except:
+                    pass
+        
+        # 2. Fallback to legacy <tool_use> format for backward compatibility
+        tool_use_pattern = r'<tool_use>(.*?)</tool_use>'
+        tool_use_match = re.search(tool_use_pattern, response_text, re.DOTALL)
+        
+        if tool_use_match:
+            tool_use_str = tool_use_match.group(1).strip()
             try:
                 tool_use_dict = ast.literal_eval(tool_use_str)
                 if isinstance(tool_use_dict, dict) and 'tool_name' in tool_use_dict and 'tool_input' in tool_use_dict:
-                    return tool_use_dict
+                    return {
+                        'tool_name': tool_use_dict['tool_name'],
+                        'tool_input': tool_use_dict['tool_input']
+                    }
             except Exception:
                 pass
 
@@ -283,7 +320,19 @@ def chat_with_agent_manualtools(msg, model, msg_history=None, logging=print):
     # Construct message
     if msg_history is None:
         msg_history = []
-    system_message = f'You are a coding agent.\n\n{get_tooluse_prompt()}'
+    
+    # Select appropriate prompt based on model
+    if model == "deepseek-r1:14b":
+        # Use optimized prompt for DeepSeek R1
+        tooluse_prompt = get_deepseek_tooluse_prompt()
+    elif "ollama" in model.lower() or model.endswith(":14b") or model.endswith(":7b"):
+        # Use Ollama-optimized prompt for local models
+        tooluse_prompt = get_ollama_tooluse_prompt()
+    else:
+        # Use original prompt for other models
+        tooluse_prompt = get_tooluse_prompt()
+    
+    system_message = f'You are a coding agent.\n\n{tooluse_prompt}'
     new_msg_history = msg_history
 
     try:

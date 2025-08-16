@@ -6,6 +6,11 @@ botocore
 boto3
 openai
 
+#chess dgm
+requests
+numpy
+ollama
+
 # SWE-Bench
 beautifulsoup4
 chardet
@@ -21,3 +26,8 @@ unidiff
 pytest
 pytest-asyncio
 async_timeout
+
+#chess tools
+python-chess
+stockfish
+
