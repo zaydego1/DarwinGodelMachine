@@ -232,3 +232,10 @@ class ChessSelfImprove:
                 log_entries.append(f"Puzzle {result['puzzle_id']}: {result.get('agent_response', 'No response')}")
 
         return "\n".join(log_entries)
+
+
+# Convenience function for validation and external use
+def self_improve_agent(agent_id, parent_id):
+    """Standalone function for agent self-improvement"""
+    improver = ChessSelfImprove()
+    return improver.self_improve_agent(agent_id, parent_id)

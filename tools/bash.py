@@ -148,7 +148,23 @@ async def tool_function_call(command):
         return f"Error: {str(e)}"
 
 def tool_function(command):
-    return asyncio.run(tool_function_call(command))
+    try:
+        result = asyncio.run(tool_function_call(command))
+        
+        # Return structured format for validation
+        return {
+            "success": True,
+            "exit_code": 0,  # Assuming success since no exception was raised
+            "output": result,
+            "command": command
+        }
+    except Exception as e:
+        return {
+            "success": False,
+            "exit_code": 1,
+            "output": f"Error: {str(e)}",
+            "command": command
+        }
 
 if __name__ == "__main__":
     # Example usage

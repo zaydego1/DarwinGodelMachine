@@ -19,28 +19,35 @@ def tool_function(fen, analysis_type="basic"):
         board = chess.Board(fen)
         
         if not board.is_valid():
-            return "Invalid chess position"
-        
-        # Basic analysis
-        analysis = []
-        analysis.append(f"Position: {fen}")
-        analysis.append(f"To move: {'White' if board.turn else 'Black'}")
-        analysis.append(f"Legal moves: {len(list(board.legal_moves))}")
-        analysis.append(f"In check: {board.is_check()}")
+            return {"error": "Invalid chess position", "success": False}
         
         # Material count
         material_balance = calculate_material_balance(board)
-        analysis.append(f"Material balance: {material_balance:+d} (White perspective)")
+        
+        # Basic analysis
+        result = {
+            "success": True,
+            "position": fen,
+            "to_move": "White" if board.turn else "Black",
+            "legal_moves_count": len(list(board.legal_moves)),
+            "in_check": board.is_check(),
+            "material_balance": material_balance,
+            "analysis_summary": f"{'White' if board.turn else 'Black'} to move, {len(list(board.legal_moves))} legal moves"
+        }
         
         if analysis_type == "detailed":
             # Add more detailed analysis
-            analysis.append(f"Castling rights: {get_castling_rights(board)}")
-            analysis.append(f"En passant: {board.ep_square if board.ep_square else 'None'}")
+            result.update({
+                "castling_rights": get_castling_rights(board),
+                "en_passant": str(board.ep_square) if board.ep_square else None,
+                "is_endgame": is_endgame(board),
+                "piece_count": count_pieces(board)
+            })
         
-        return "\n".join(analysis)
+        return result
         
     except Exception as e:
-        return f"Error analyzing position: {str(e)}"
+        return {"error": f"Error analyzing position: {str(e)}", "success": False}
 
 def calculate_material_balance(board):
     """Calculate material balance (positive = White advantage)"""
@@ -72,3 +79,21 @@ def get_castling_rights(board):
         rights.append("q")
     
     return "".join(rights) if rights else "None"
+
+def is_endgame(board):
+    """Determine if position is in endgame (simple heuristic)"""
+    piece_count = len(board.piece_map())
+    return piece_count <= 10  # Simple heuristic: <= 10 pieces total
+
+def count_pieces(board):
+    """Count pieces by type and color"""
+    piece_count = {
+        'white_pawns': len(board.pieces(chess.PAWN, chess.WHITE)),
+        'black_pawns': len(board.pieces(chess.PAWN, chess.BLACK)),
+        'white_pieces': len(board.pieces(chess.KNIGHT, chess.WHITE)) + len(board.pieces(chess.BISHOP, chess.WHITE)) + 
+                       len(board.pieces(chess.ROOK, chess.WHITE)) + len(board.pieces(chess.QUEEN, chess.WHITE)),
+        'black_pieces': len(board.pieces(chess.KNIGHT, chess.BLACK)) + len(board.pieces(chess.BISHOP, chess.BLACK)) + 
+                       len(board.pieces(chess.ROOK, chess.BLACK)) + len(board.pieces(chess.QUEEN, chess.BLACK)),
+        'total': len(board.piece_map())
+    }
+    return piece_count

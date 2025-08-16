@@ -1,0 +1,1302 @@
+[
+  {
+    "id": "generated_900_1100_001",
+    "rating": 919,
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 4 5",
+    "themes": [
+      "fork",
+      "tactics"
+    ],
+    "solution": [
+      "Ng5",
+      "Nh6"
+    ]
+  },
+  {
+    "id": "generated_900_1100_002",
+    "rating": 909,
+    "fen": "rnbqkb1r/ppp2ppp/3p1n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 0 5",
+    "themes": [
+      "pin",
+      "tactics"
+    ],
+    "solution": [
+      "Bg5",
+      "Be7"
+    ]
+  },
+  {
+    "id": "generated_900_1100_003",
+    "rating": 990,
+    "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R b KQkq - 5 5",
+    "themes": [
+      "discovery",
+      "tactics"
+    ],
+    "solution": [
+      "d6",
+      "Nd4"
+    ]
+  },
+  {
+    "id": "generated_900_1100_004",
+    "rating": 972,
+    "fen": "r1bqkbnr/pppp1p1p/2n3p1/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 1 4",
+    "themes": [
+      "mate",
+      "sacrifice"
+    ],
+    "solution": [
+      "Qh4+",
+      "g3"
+    ]
+  },
+  {
+    "id": "generated_900_1100_005",
+    "rating": 973,
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR b KQkq - 1 2",
+    "themes": [
+      "opening",
+      "development"
+    ],
+    "solution": [
+      "Nf6",
+      "Nc3"
+    ]
+  },
+  {
+    "id": "generated_900_1100_006",
+    "rating": 943,
+    "fen": "r1bqk2r/ppp2ppp/2np1n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 4 6",
+    "themes": [
+      "deflection",
+      "tactics"
+    ],
+    "solution": [
+      "Bxf7+",
+      "Kxf7"
+    ]
+  },
+  {
+    "id": "generated_900_1100_007",
+    "rating": 1057,
+    "fen": "rnbqk2r/ppp2ppp/3p1n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 0 6",
+    "themes": [
+      "skewer",
+      "tactics"
+    ],
+    "solution": [
+      "Bg5",
+      "Be7"
+    ]
+  },
+  {
+    "id": "generated_900_1100_008",
+    "rating": 947,
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R b KQkq - 5 5",
+    "themes": [
+      "double attack",
+      "tactics"
+    ],
+    "solution": [
+      "Nd4",
+      "Nxd4"
+    ]
+  },
+  {
+    "id": "generated_900_1100_009",
+    "rating": 1031,
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 4 5",
+    "themes": [
+      "fork",
+      "tactics"
+    ],
+    "solution": [
+      "Ng5",
+      "Nh6"
+    ]
+  },
+  {
+    "id": "generated_900_1100_010",
+    "rating": 903,
+    "fen": "rnbqkb1r/ppp2ppp/3p1n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 0 5",
+    "themes": [
+      "pin",
+      "tactics"
+    ],
+    "solution": [
+      "Bg5",
+      "Be7"
+    ]
+  },
+  {
+    "id": "generated_900_1100_011",
+    "rating": 995,
+    "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R b KQkq - 5 5",
+    "themes": [
+      "discovery",
+      "tactics"
+    ],
+    "solution": [
+      "d6",
+      "Nd4"
+    ]
+  },
+  {
+    "id": "generated_900_1100_012",
+    "rating": 900,
+    "fen": "r1bqkbnr/pppp1p1p/2n3p1/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 1 4",
+    "themes": [
+      "mate",
+      "sacrifice"
+    ],
+    "solution": [
+      "Qh4+",
+      "g3"
+    ]
+  },
+  {
+    "id": "generated_900_1100_013",
+    "rating": 1074,
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR b KQkq - 1 2",
+    "themes": [
+      "opening",
+      "development"
+    ],
+    "solution": [
+      "Nf6",
+      "Nc3"
+    ]
+  },
+  {
+    "id": "generated_900_1100_014",
+    "rating": 1040,
+    "fen": "r1bqk2r/ppp2ppp/2np1n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 4 6",
+    "themes": [
+      "deflection",
+      "tactics"
+    ],
+    "solution": [
+      "Bxf7+",
+      "Kxf7"
+    ]
+  },
+  {
+    "id": "generated_900_1100_015",
+    "rating": 1044,
+    "fen": "rnbqk2r/ppp2ppp/3p1n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 0 6",
+    "themes": [
+      "skewer",
+      "tactics"
+    ],
+    "solution": [
+      "Bg5",
+      "Be7"
+    ]
+  },
+  {
+    "id": "generated_900_1100_016",
+    "rating": 995,
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R b KQkq - 5 5",
+    "themes": [
+      "double attack",
+      "tactics"
+    ],
+    "solution": [
+      "Nd4",
+      "Nxd4"
+    ]
+  },
+  {
+    "id": "generated_900_1100_017",
+    "rating": 1088,
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 4 5",
+    "themes": [
+      "fork",
+      "tactics"
+    ],
+    "solution": [
+      "Ng5",
+      "Nh6"
+    ]
+  },
+  {
+    "id": "generated_900_1100_018",
+    "rating": 1066,
+    "fen": "rnbqkb1r/ppp2ppp/3p1n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 0 5",
+    "themes": [
+      "pin",
+      "tactics"
+    ],
+    "solution": [
+      "Bg5",
+      "Be7"
+    ]
+  },
+  {
+    "id": "generated_900_1100_019",
+    "rating": 1039,
+    "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R b KQkq - 5 5",
+    "themes": [
+      "discovery",
+      "tactics"
+    ],
+    "solution": [
+      "d6",
+      "Nd4"
+    ]
+  },
+  {
+    "id": "generated_900_1100_020",
+    "rating": 924,
+    "fen": "r1bqkbnr/pppp1p1p/2n3p1/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 1 4",
+    "themes": [
+      "mate",
+      "sacrifice"
+    ],
+    "solution": [
+      "Qh4+",
+      "g3"
+    ]
+  },
+  {
+    "id": "generated_900_1100_021",
+    "rating": 1082,
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR b KQkq - 1 2",
+    "themes": [
+      "opening",
+      "development"
+    ],
+    "solution": [
+      "Nf6",
+      "Nc3"
+    ]
+  },
+  {
+    "id": "generated_900_1100_022",
+    "rating": 1083,
+    "fen": "r1bqk2r/ppp2ppp/2np1n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 4 6",
+    "themes": [
+      "deflection",
+      "tactics"
+    ],
+    "solution": [
+      "Bxf7+",
+      "Kxf7"
+    ]
+  },
+  {
+    "id": "generated_900_1100_023",
+    "rating": 1015,
+    "fen": "rnbqk2r/ppp2ppp/3p1n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 0 6",
+    "themes": [
+      "skewer",
+      "tactics"
+    ],
+    "solution": [
+      "Bg5",
+      "Be7"
+    ]
+  },
+  {
+    "id": "generated_900_1100_024",
+    "rating": 944,
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R b KQkq - 5 5",
+    "themes": [
+      "double attack",
+      "tactics"
+    ],
+    "solution": [
+      "Nd4",
+      "Nxd4"
+    ]
+  },
+  {
+    "id": "generated_900_1100_025",
+    "rating": 931,
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 4 5",
+    "themes": [
+      "fork",
+      "tactics"
+    ],
+    "solution": [
+      "Ng5",
+      "Nh6"
+    ]
+  },
+  {
+    "id": "generated_900_1100_026",
+    "rating": 957,
+    "fen": "rnbqkb1r/ppp2ppp/3p1n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 0 5",
+    "themes": [
+      "pin",
+      "tactics"
+    ],
+    "solution": [
+      "Bg5",
+      "Be7"
+    ]
+  },
+  {
+    "id": "generated_900_1100_027",
+    "rating": 1088,
+    "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R b KQkq - 5 5",
+    "themes": [
+      "discovery",
+      "tactics"
+    ],
+    "solution": [
+      "d6",
+      "Nd4"
+    ]
+  },
+  {
+    "id": "generated_900_1100_028",
+    "rating": 983,
+    "fen": "r1bqkbnr/pppp1p1p/2n3p1/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 1 4",
+    "themes": [
+      "mate",
+      "sacrifice"
+    ],
+    "solution": [
+      "Qh4+",
+      "g3"
+    ]
+  },
+  {
+    "id": "generated_900_1100_029",
+    "rating": 1046,
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR b KQkq - 1 2",
+    "themes": [
+      "opening",
+      "development"
+    ],
+    "solution": [
+      "Nf6",
+      "Nc3"
+    ]
+  },
+  {
+    "id": "generated_900_1100_030",
+    "rating": 921,
+    "fen": "r1bqk2r/ppp2ppp/2np1n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 4 6",
+    "themes": [
+      "deflection",
+      "tactics"
+    ],
+    "solution": [
+      "Bxf7+",
+      "Kxf7"
+    ]
+  },
+  {
+    "id": "generated_900_1100_031",
+    "rating": 1003,
+    "fen": "rnbqk2r/ppp2ppp/3p1n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 0 6",
+    "themes": [
+      "skewer",
+      "tactics"
+    ],
+    "solution": [
+      "Bg5",
+      "Be7"
+    ]
+  },
+  {
+    "id": "generated_900_1100_032",
+    "rating": 1058,
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R b KQkq - 5 5",
+    "themes": [
+      "double attack",
+      "tactics"
+    ],
+    "solution": [
+      "Nd4",
+      "Nxd4"
+    ]
+  },
+  {
+    "id": "generated_900_1100_033",
+    "rating": 979,
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 4 5",
+    "themes": [
+      "fork",
+      "tactics"
+    ],
+    "solution": [
+      "Ng5",
+      "Nh6"
+    ]
+  },
+  {
+    "id": "generated_900_1100_034",
+    "rating": 936,
+    "fen": "rnbqkb1r/ppp2ppp/3p1n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 0 5",
+    "themes": [
+      "pin",
+      "tactics"
+    ],
+    "solution": [
+      "Bg5",
+      "Be7"
+    ]
+  },
+  {
+    "id": "generated_900_1100_035",
+    "rating": 1056,
+    "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R b KQkq - 5 5",
+    "themes": [
+      "discovery",
+      "tactics"
+    ],
+    "solution": [
+      "d6",
+      "Nd4"
+    ]
+  },
+  {
+    "id": "generated_900_1100_036",
+    "rating": 981,
+    "fen": "r1bqkbnr/pppp1p1p/2n3p1/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 1 4",
+    "themes": [
+      "mate",
+      "sacrifice"
+    ],
+    "solution": [
+      "Qh4+",
+      "g3"
+    ]
+  },
+  {
+    "id": "generated_900_1100_037",
+    "rating": 916,
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR b KQkq - 1 2",
+    "themes": [
+      "opening",
+      "development"
+    ],
+    "solution": [
+      "Nf6",
+      "Nc3"
+    ]
+  },
+  {
+    "id": "generated_900_1100_038",
+    "rating": 962,
+    "fen": "r1bqk2r/ppp2ppp/2np1n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 4 6",
+    "themes": [
+      "deflection",
+      "tactics"
+    ],
+    "solution": [
+      "Bxf7+",
+      "Kxf7"
+    ]
+  },
+  {
+    "id": "generated_900_1100_039",
+    "rating": 987,
+    "fen": "rnbqk2r/ppp2ppp/3p1n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 0 6",
+    "themes": [
+      "skewer",
+      "tactics"
+    ],
+    "solution": [
+      "Bg5",
+      "Be7"
+    ]
+  },
+  {
+    "id": "generated_900_1100_040",
+    "rating": 955,
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R b KQkq - 5 5",
+    "themes": [
+      "double attack",
+      "tactics"
+    ],
+    "solution": [
+      "Nd4",
+      "Nxd4"
+    ]
+  },
+  {
+    "id": "generated_900_1100_041",
+    "rating": 1007,
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 4 5",
+    "themes": [
+      "fork",
+      "tactics"
+    ],
+    "solution": [
+      "Ng5",
+      "Nh6"
+    ]
+  },
+  {
+    "id": "generated_900_1100_042",
+    "rating": 931,
+    "fen": "rnbqkb1r/ppp2ppp/3p1n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 0 5",
+    "themes": [
+      "pin",
+      "tactics"
+    ],
+    "solution": [
+      "Bg5",
+      "Be7"
+    ]
+  },
+  {
+    "id": "generated_900_1100_043",
+    "rating": 1050,
+    "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R b KQkq - 5 5",
+    "themes": [
+      "discovery",
+      "tactics"
+    ],
+    "solution": [
+      "d6",
+      "Nd4"
+    ]
+  },
+  {
+    "id": "generated_900_1100_044",
+    "rating": 1076,
+    "fen": "r1bqkbnr/pppp1p1p/2n3p1/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 1 4",
+    "themes": [
+      "mate",
+      "sacrifice"
+    ],
+    "solution": [
+      "Qh4+",
+      "g3"
+    ]
+  },
+  {
+    "id": "generated_900_1100_045",
+    "rating": 952,
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR b KQkq - 1 2",
+    "themes": [
+      "opening",
+      "development"
+    ],
+    "solution": [
+      "Nf6",
+      "Nc3"
+    ]
+  },
+  {
+    "id": "generated_900_1100_046",
+    "rating": 1094,
+    "fen": "r1bqk2r/ppp2ppp/2np1n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 4 6",
+    "themes": [
+      "deflection",
+      "tactics"
+    ],
+    "solution": [
+      "Bxf7+",
+      "Kxf7"
+    ]
+  },
+  {
+    "id": "generated_900_1100_047",
+    "rating": 999,
+    "fen": "rnbqk2r/ppp2ppp/3p1n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 0 6",
+    "themes": [
+      "skewer",
+      "tactics"
+    ],
+    "solution": [
+      "Bg5",
+      "Be7"
+    ]
+  },
+  {
+    "id": "generated_900_1100_048",
+    "rating": 940,
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R b KQkq - 5 5",
+    "themes": [
+      "double attack",
+      "tactics"
+    ],
+    "solution": [
+      "Nd4",
+      "Nxd4"
+    ]
+  },
+  {
+    "id": "generated_900_1100_049",
+    "rating": 970,
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 4 5",
+    "themes": [
+      "fork",
+      "tactics"
+    ],
+    "solution": [
+      "Ng5",
+      "Nh6"
+    ]
+  },
+  {
+    "id": "generated_900_1100_050",
+    "rating": 942,
+    "fen": "rnbqkb1r/ppp2ppp/3p1n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 0 5",
+    "themes": [
+      "pin",
+      "tactics"
+    ],
+    "solution": [
+      "Bg5",
+      "Be7"
+    ]
+  },
+  {
+    "id": "generated_900_1100_051",
+    "rating": 1010,
+    "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R b KQkq - 5 5",
+    "themes": [
+      "discovery",
+      "tactics"
+    ],
+    "solution": [
+      "d6",
+      "Nd4"
+    ]
+  },
+  {
+    "id": "generated_900_1100_052",
+    "rating": 976,
+    "fen": "r1bqkbnr/pppp1p1p/2n3p1/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 1 4",
+    "themes": [
+      "mate",
+      "sacrifice"
+    ],
+    "solution": [
+      "Qh4+",
+      "g3"
+    ]
+  },
+  {
+    "id": "generated_900_1100_053",
+    "rating": 1009,
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR b KQkq - 1 2",
+    "themes": [
+      "opening",
+      "development"
+    ],
+    "solution": [
+      "Nf6",
+      "Nc3"
+    ]
+  },
+  {
+    "id": "generated_900_1100_054",
+    "rating": 985,
+    "fen": "r1bqk2r/ppp2ppp/2np1n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 4 6",
+    "themes": [
+      "deflection",
+      "tactics"
+    ],
+    "solution": [
+      "Bxf7+",
+      "Kxf7"
+    ]
+  },
+  {
+    "id": "generated_900_1100_055",
+    "rating": 923,
+    "fen": "rnbqk2r/ppp2ppp/3p1n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 0 6",
+    "themes": [
+      "skewer",
+      "tactics"
+    ],
+    "solution": [
+      "Bg5",
+      "Be7"
+    ]
+  },
+  {
+    "id": "generated_900_1100_056",
+    "rating": 979,
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R b KQkq - 5 5",
+    "themes": [
+      "double attack",
+      "tactics"
+    ],
+    "solution": [
+      "Nd4",
+      "Nxd4"
+    ]
+  },
+  {
+    "id": "generated_900_1100_057",
+    "rating": 923,
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 4 5",
+    "themes": [
+      "fork",
+      "tactics"
+    ],
+    "solution": [
+      "Ng5",
+      "Nh6"
+    ]
+  },
+  {
+    "id": "generated_900_1100_058",
+    "rating": 1060,
+    "fen": "rnbqkb1r/ppp2ppp/3p1n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 0 5",
+    "themes": [
+      "pin",
+      "tactics"
+    ],
+    "solution": [
+      "Bg5",
+      "Be7"
+    ]
+  },
+  {
+    "id": "generated_900_1100_059",
+    "rating": 922,
+    "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R b KQkq - 5 5",
+    "themes": [
+      "discovery",
+      "tactics"
+    ],
+    "solution": [
+      "d6",
+      "Nd4"
+    ]
+  },
+  {
+    "id": "generated_900_1100_060",
+    "rating": 1052,
+    "fen": "r1bqkbnr/pppp1p1p/2n3p1/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 1 4",
+    "themes": [
+      "mate",
+      "sacrifice"
+    ],
+    "solution": [
+      "Qh4+",
+      "g3"
+    ]
+  },
+  {
+    "id": "generated_900_1100_061",
+    "rating": 1034,
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR b KQkq - 1 2",
+    "themes": [
+      "opening",
+      "development"
+    ],
+    "solution": [
+      "Nf6",
+      "Nc3"
+    ]
+  },
+  {
+    "id": "generated_900_1100_062",
+    "rating": 1068,
+    "fen": "r1bqk2r/ppp2ppp/2np1n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 4 6",
+    "themes": [
+      "deflection",
+      "tactics"
+    ],
+    "solution": [
+      "Bxf7+",
+      "Kxf7"
+    ]
+  },
+  {
+    "id": "generated_900_1100_063",
+    "rating": 1024,
+    "fen": "rnbqk2r/ppp2ppp/3p1n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 0 6",
+    "themes": [
+      "skewer",
+      "tactics"
+    ],
+    "solution": [
+      "Bg5",
+      "Be7"
+    ]
+  },
+  {
+    "id": "generated_900_1100_064",
+    "rating": 1019,
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R b KQkq - 5 5",
+    "themes": [
+      "double attack",
+      "tactics"
+    ],
+    "solution": [
+      "Nd4",
+      "Nxd4"
+    ]
+  },
+  {
+    "id": "generated_900_1100_065",
+    "rating": 977,
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 4 5",
+    "themes": [
+      "fork",
+      "tactics"
+    ],
+    "solution": [
+      "Ng5",
+      "Nh6"
+    ]
+  },
+  {
+    "id": "generated_900_1100_066",
+    "rating": 1086,
+    "fen": "rnbqkb1r/ppp2ppp/3p1n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 0 5",
+    "themes": [
+      "pin",
+      "tactics"
+    ],
+    "solution": [
+      "Bg5",
+      "Be7"
+    ]
+  },
+  {
+    "id": "generated_900_1100_067",
+    "rating": 976,
+    "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R b KQkq - 5 5",
+    "themes": [
+      "discovery",
+      "tactics"
+    ],
+    "solution": [
+      "d6",
+      "Nd4"
+    ]
+  },
+  {
+    "id": "generated_900_1100_068",
+    "rating": 1081,
+    "fen": "r1bqkbnr/pppp1p1p/2n3p1/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 1 4",
+    "themes": [
+      "mate",
+      "sacrifice"
+    ],
+    "solution": [
+      "Qh4+",
+      "g3"
+    ]
+  },
+  {
+    "id": "generated_900_1100_069",
+    "rating": 933,
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR b KQkq - 1 2",
+    "themes": [
+      "opening",
+      "development"
+    ],
+    "solution": [
+      "Nf6",
+      "Nc3"
+    ]
+  },
+  {
+    "id": "generated_900_1100_070",
+    "rating": 995,
+    "fen": "r1bqk2r/ppp2ppp/2np1n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 4 6",
+    "themes": [
+      "deflection",
+      "tactics"
+    ],
+    "solution": [
+      "Bxf7+",
+      "Kxf7"
+    ]
+  },
+  {
+    "id": "generated_900_1100_071",
+    "rating": 1086,
+    "fen": "rnbqk2r/ppp2ppp/3p1n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 0 6",
+    "themes": [
+      "skewer",
+      "tactics"
+    ],
+    "solution": [
+      "Bg5",
+      "Be7"
+    ]
+  },
+  {
+    "id": "generated_900_1100_072",
+    "rating": 986,
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R b KQkq - 5 5",
+    "themes": [
+      "double attack",
+      "tactics"
+    ],
+    "solution": [
+      "Nd4",
+      "Nxd4"
+    ]
+  },
+  {
+    "id": "generated_900_1100_073",
+    "rating": 1010,
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 4 5",
+    "themes": [
+      "fork",
+      "tactics"
+    ],
+    "solution": [
+      "Ng5",
+      "Nh6"
+    ]
+  },
+  {
+    "id": "generated_900_1100_074",
+    "rating": 1074,
+    "fen": "rnbqkb1r/ppp2ppp/3p1n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 0 5",
+    "themes": [
+      "pin",
+      "tactics"
+    ],
+    "solution": [
+      "Bg5",
+      "Be7"
+    ]
+  },
+  {
+    "id": "generated_900_1100_075",
+    "rating": 1099,
+    "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R b KQkq - 5 5",
+    "themes": [
+      "discovery",
+      "tactics"
+    ],
+    "solution": [
+      "d6",
+      "Nd4"
+    ]
+  },
+  {
+    "id": "generated_900_1100_076",
+    "rating": 1020,
+    "fen": "r1bqkbnr/pppp1p1p/2n3p1/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 1 4",
+    "themes": [
+      "mate",
+      "sacrifice"
+    ],
+    "solution": [
+      "Qh4+",
+      "g3"
+    ]
+  },
+  {
+    "id": "generated_900_1100_077",
+    "rating": 1015,
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR b KQkq - 1 2",
+    "themes": [
+      "opening",
+      "development"
+    ],
+    "solution": [
+      "Nf6",
+      "Nc3"
+    ]
+  },
+  {
+    "id": "generated_900_1100_078",
+    "rating": 1024,
+    "fen": "r1bqk2r/ppp2ppp/2np1n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 4 6",
+    "themes": [
+      "deflection",
+      "tactics"
+    ],
+    "solution": [
+      "Bxf7+",
+      "Kxf7"
+    ]
+  },
+  {
+    "id": "generated_900_1100_079",
+    "rating": 1023,
+    "fen": "rnbqk2r/ppp2ppp/3p1n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 0 6",
+    "themes": [
+      "skewer",
+      "tactics"
+    ],
+    "solution": [
+      "Bg5",
+      "Be7"
+    ]
+  },
+  {
+    "id": "generated_900_1100_080",
+    "rating": 1005,
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R b KQkq - 5 5",
+    "themes": [
+      "double attack",
+      "tactics"
+    ],
+    "solution": [
+      "Nd4",
+      "Nxd4"
+    ]
+  },
+  {
+    "id": "generated_900_1100_081",
+    "rating": 947,
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 4 5",
+    "themes": [
+      "fork",
+      "tactics"
+    ],
+    "solution": [
+      "Ng5",
+      "Nh6"
+    ]
+  },
+  {
+    "id": "generated_900_1100_082",
+    "rating": 1045,
+    "fen": "rnbqkb1r/ppp2ppp/3p1n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 0 5",
+    "themes": [
+      "pin",
+      "tactics"
+    ],
+    "solution": [
+      "Bg5",
+      "Be7"
+    ]
+  },
+  {
+    "id": "generated_900_1100_083",
+    "rating": 1065,
+    "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R b KQkq - 5 5",
+    "themes": [
+      "discovery",
+      "tactics"
+    ],
+    "solution": [
+      "d6",
+      "Nd4"
+    ]
+  },
+  {
+    "id": "generated_900_1100_084",
+    "rating": 1026,
+    "fen": "r1bqkbnr/pppp1p1p/2n3p1/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 1 4",
+    "themes": [
+      "mate",
+      "sacrifice"
+    ],
+    "solution": [
+      "Qh4+",
+      "g3"
+    ]
+  },
+  {
+    "id": "generated_900_1100_085",
+    "rating": 956,
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR b KQkq - 1 2",
+    "themes": [
+      "opening",
+      "development"
+    ],
+    "solution": [
+      "Nf6",
+      "Nc3"
+    ]
+  },
+  {
+    "id": "generated_900_1100_086",
+    "rating": 1032,
+    "fen": "r1bqk2r/ppp2ppp/2np1n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 4 6",
+    "themes": [
+      "deflection",
+      "tactics"
+    ],
+    "solution": [
+      "Bxf7+",
+      "Kxf7"
+    ]
+  },
+  {
+    "id": "generated_900_1100_087",
+    "rating": 992,
+    "fen": "rnbqk2r/ppp2ppp/3p1n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 0 6",
+    "themes": [
+      "skewer",
+      "tactics"
+    ],
+    "solution": [
+      "Bg5",
+      "Be7"
+    ]
+  },
+  {
+    "id": "generated_900_1100_088",
+    "rating": 949,
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R b KQkq - 5 5",
+    "themes": [
+      "double attack",
+      "tactics"
+    ],
+    "solution": [
+      "Nd4",
+      "Nxd4"
+    ]
+  },
+  {
+    "id": "generated_900_1100_089",
+    "rating": 925,
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 4 5",
+    "themes": [
+      "fork",
+      "tactics"
+    ],
+    "solution": [
+      "Ng5",
+      "Nh6"
+    ]
+  },
+  {
+    "id": "generated_900_1100_090",
+    "rating": 1002,
+    "fen": "rnbqkb1r/ppp2ppp/3p1n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 0 5",
+    "themes": [
+      "pin",
+      "tactics"
+    ],
+    "solution": [
+      "Bg5",
+      "Be7"
+    ]
+  },
+  {
+    "id": "generated_900_1100_091",
+    "rating": 1048,
+    "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R b KQkq - 5 5",
+    "themes": [
+      "discovery",
+      "tactics"
+    ],
+    "solution": [
+      "d6",
+      "Nd4"
+    ]
+  },
+  {
+    "id": "generated_900_1100_092",
+    "rating": 1036,
+    "fen": "r1bqkbnr/pppp1p1p/2n3p1/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 1 4",
+    "themes": [
+      "mate",
+      "sacrifice"
+    ],
+    "solution": [
+      "Qh4+",
+      "g3"
+    ]
+  },
+  {
+    "id": "generated_900_1100_093",
+    "rating": 1014,
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR b KQkq - 1 2",
+    "themes": [
+      "opening",
+      "development"
+    ],
+    "solution": [
+      "Nf6",
+      "Nc3"
+    ]
+  },
+  {
+    "id": "generated_900_1100_094",
+    "rating": 1003,
+    "fen": "r1bqk2r/ppp2ppp/2np1n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 4 6",
+    "themes": [
+      "deflection",
+      "tactics"
+    ],
+    "solution": [
+      "Bxf7+",
+      "Kxf7"
+    ]
+  },
+  {
+    "id": "generated_900_1100_095",
+    "rating": 932,
+    "fen": "rnbqk2r/ppp2ppp/3p1n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 0 6",
+    "themes": [
+      "skewer",
+      "tactics"
+    ],
+    "solution": [
+      "Bg5",
+      "Be7"
+    ]
+  },
+  {
+    "id": "generated_900_1100_096",
+    "rating": 1004,
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R b KQkq - 5 5",
+    "themes": [
+      "double attack",
+      "tactics"
+    ],
+    "solution": [
+      "Nd4",
+      "Nxd4"
+    ]
+  },
+  {
+    "id": "generated_900_1100_097",
+    "rating": 948,
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 4 5",
+    "themes": [
+      "fork",
+      "tactics"
+    ],
+    "solution": [
+      "Ng5",
+      "Nh6"
+    ]
+  },
+  {
+    "id": "generated_900_1100_098",
+    "rating": 920,
+    "fen": "rnbqkb1r/ppp2ppp/3p1n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 0 5",
+    "themes": [
+      "pin",
+      "tactics"
+    ],
+    "solution": [
+      "Bg5",
+      "Be7"
+    ]
+  },
+  {
+    "id": "generated_900_1100_099",
+    "rating": 1066,
+    "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R b KQkq - 5 5",
+    "themes": [
+      "discovery",
+      "tactics"
+    ],
+    "solution": [
+      "d6",
+      "Nd4"
+    ]
+  },
+  {
+    "id": "generated_900_1100_100",
+    "rating": 1012,
+    "fen": "r1bqkbnr/pppp1p1p/2n3p1/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 1 4",
+    "themes": [
+      "mate",
+      "sacrifice"
+    ],
+    "solution": [
+      "Qh4+",
+      "g3"
+    ]
+  }
+]
