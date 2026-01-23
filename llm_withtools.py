@@ -98,32 +98,33 @@ def check_for_tool_use(response, model=''):
     else:
         # For other LLMs, check for both new and legacy formats
         response_text = response if isinstance(response, str) else str(response)
-        
-        # 1. Check for new TOOL_CALL: format first
-        tool_call_pattern = r'TOOL_CALL:\s*(\{.*?\})'
-        tool_call_match = re.search(tool_call_pattern, response_text, re.DOTALL)
-        
-        if tool_call_match:
-            try:
-                tool_call_json = json.loads(tool_call_match.group(1))
-                if isinstance(tool_call_json, dict) and 'tool' in tool_call_json and 'args' in tool_call_json:
-                    return {
-                        'tool_name': tool_call_json['tool'],
-                        'tool_input': tool_call_json['args']
-                    }
-            except (json.JSONDecodeError, KeyError) as e:
-                # Try to extract with more robust parsing
-                try:
-                    # Handle single quotes or other formatting issues
-                    cleaned_json = tool_call_match.group(1).replace("'", '"')
-                    tool_call_json = json.loads(cleaned_json)
-                    if isinstance(tool_call_json, dict) and 'tool' in tool_call_json and 'args' in tool_call_json:
-                        return {
-                            'tool_name': tool_call_json['tool'],
-                            'tool_input': tool_call_json['args']
-                        }
-                except:
-                    pass
+
+        # 1. Check for new TOOL_CALL: format with proper JSON extraction
+        tool_call_start = response_text.find('TOOL_CALL:')
+        if tool_call_start != -1:
+            json_start = response_text.find('{', tool_call_start)
+            if json_start != -1:
+                brace_count = 0
+                json_end = json_start
+                for i in range(json_start, len(response_text)):
+                    if response_text[i] == '{':
+                        brace_count += 1
+                    elif response_text[i] == '}':
+                        brace_count -= 1
+                        if brace_count == 0:
+                            json_end = i + 1
+                            break
+
+                if brace_count == 0:
+                    try:
+                        tool_call_json = json.loads(response_text[json_start:json_end])
+                        if isinstance(tool_call_json, dict) and 'tool' in tool_call_json and 'args' in tool_call_json:
+                            return {
+                                'tool_name': tool_call_json['tool'],
+                                'tool_input': tool_call_json['args']
+                            }
+                    except (json.JSONDecodeError, KeyError):
+                        pass
         
         # 2. Fallback to legacy <tool_use> format for backward compatibility
         tool_use_pattern = r'<tool_use>(.*?)</tool_use>'
@@ -325,7 +326,7 @@ def chat_with_agent_manualtools(msg, model, msg_history=None, logging=print):
     if model == "deepseek-r1:14b":
         # Use optimized prompt for DeepSeek R1
         tooluse_prompt = get_deepseek_tooluse_prompt()
-    elif "ollama" in model.lower() or model.endswith(":14b") or model.endswith(":7b"):
+    elif "ollama" in model.lower() or model.endswith(":14b") or model.endswith(":7b") or model.endswith(":32b"):
         # Use Ollama-optimized prompt for local models
         tooluse_prompt = get_ollama_tooluse_prompt()
     else:
@@ -354,14 +355,25 @@ def chat_with_agent_manualtools(msg, model, msg_history=None, logging=print):
             msg_history=new_msg_history,
         )
         logging(f"Output: {response}")
+        logging(f"[DEBUG] Response type: {type(response)}")
+        logging(f"[DEBUG] Response repr: {repr(response)[:200]}")
 
         # Tool use
         tool_use = check_for_tool_use(response, model=client_model)
+        logging(f"[DEBUG] Tool use result: {tool_use}")
+
+        if tool_use:
+            logging(f"[DEBUG] ENTERING tool execution loop")
+        else:
+            logging(f"[DEBUG] NO TOOL USE DETECTED - exiting")
+
         while tool_use:
-            # Process tool call
+            logging(f"[DEBUG] Loop iteration - executing tool: {tool_use['tool_name']}")
+
             tool_name = tool_use['tool_name']
             tool_input = tool_use['tool_input']
             tool_result = process_tool_call(tools_dict, tool_name, tool_input)
+            logging(f"[DEBUG] Tool result: {str(tool_result)[:200]}")
 
             # Cache important tool results for DeepSeek R1 (full results, let cache manager handle sizing)
             if client_model == "deepseek-r1:14b":

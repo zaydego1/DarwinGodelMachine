@@ -3,7 +3,7 @@ import subprocess
 
 def tool_info():
     return {
-        "name": "editor",
+        "name": "edit",
         "description": """Custom editing tool for viewing, creating, and editing files\n
 * State is persistent across command calls and discussions with the user.\n
 * If `path` is a file, `view` displays the entire file with line numbers. If `path` is a directory, `view` lists non-hidden files and directories up to 2 levels deep.\n
