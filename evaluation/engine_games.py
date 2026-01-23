@@ -9,17 +9,49 @@ import time
 class ChessComEngineGames:
     def __init__(self, target_elo=1000):
         self.target_elo = target_elo
-        self.engine_path = "/usr/games/stockfish"  # Local Stockfish
+        self.engine_path = self._find_stockfish()
+
+    def _find_stockfish(self):
+        import os
+        import shutil
+
+        possible_paths = [
+            "/usr/games/stockfish",
+            "/usr/local/bin/stockfish",
+            "/opt/homebrew/bin/stockfish",
+            "stockfish"
+        ]
+
+        for path in possible_paths:
+            if os.path.exists(path):
+                return path
+            if shutil.which(path):
+                return shutil.which(path)
+
+        return None
 
     def play_games_vs_engine(self, agent, num_games=20):
-        """Play multiple games against engine at target ELO"""
+        if self.engine_path is None:
+            print("WARNING: Stockfish not found. Skipping engine games.")
+            print("Install with: brew install stockfish (macOS) or apt-get install stockfish (Linux)")
+            return {
+                'win_rate': 0.0,
+                'wins': 0,
+                'losses': 0,
+                'draws': 0,
+                'errors': 0,
+                'total_games': 0,
+                'results': [],
+                'skipped': True,
+                'reason': 'stockfish_not_found'
+            }
+
         results = []
 
         for game_num in range(num_games):
             game_result = self.play_single_game(agent, game_num)
             results.append(game_result)
 
-            # Brief pause between games
             time.sleep(1)
 
         return self.calculate_performance(results)
@@ -115,7 +147,6 @@ class ChessComEngineGames:
             return 1.0  # 1s
 
     def elo_to_depth_limit(self, elo):
-        """Convert ELO to appropriate depth limit"""
         if elo <= 1000:
             return 8
         elif elo <= 1200:
@@ -124,3 +155,64 @@ class ChessComEngineGames:
             return 12
         else:
             return 15
+
+    def extract_move_from_response(self, response, fen):
+        import re
+
+        move_patterns = [
+            r'MOVE:\s*([a-h][1-8][a-h][1-8][qrbn]?)',
+            r'best move is\s+([a-h][1-8][a-h][1-8][qrbn]?)',
+            r'I (?:suggest|recommend|play)\s+([a-h][1-8][a-h][1-8][qrbn]?)',
+            r'\b([NBRQK]?[a-h]?[1-8]?x?[a-h][1-8](?:=[NBRQ])?[+#]?)\b'
+        ]
+
+        for pattern in move_patterns:
+            match = re.search(pattern, response, re.IGNORECASE)
+            if match:
+                return match.group(1)
+
+        return None
+
+    def determine_game_result(self, board, agent_color, moves_played, game_num):
+        outcome = board.outcome()
+
+        if outcome is None:
+            result = 'draw'
+            reason = 'max_moves_reached'
+        elif outcome.winner is None:
+            result = 'draw'
+            reason = outcome.termination.name.lower()
+        elif outcome.winner == agent_color:
+            result = 'win'
+            reason = outcome.termination.name.lower()
+        else:
+            result = 'loss'
+            reason = outcome.termination.name.lower()
+
+        return {
+            'result': result,
+            'reason': reason,
+            'moves': moves_played,
+            'agent_color': 'white' if agent_color == chess.WHITE else 'black',
+            'game_num': game_num,
+            'total_moves': len(moves_played)
+        }
+
+    def calculate_performance(self, results):
+        wins = sum(1 for r in results if r['result'] == 'win')
+        losses = sum(1 for r in results if r['result'] == 'loss')
+        draws = sum(1 for r in results if r['result'] == 'draw')
+        errors = sum(1 for r in results if r['result'] == 'error')
+
+        total_games = len(results)
+        win_rate = wins / total_games if total_games > 0 else 0.0
+
+        return {
+            'win_rate': win_rate,
+            'wins': wins,
+            'losses': losses,
+            'draws': draws,
+            'errors': errors,
+            'total_games': total_games,
+            'results': results
+        }

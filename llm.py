@@ -42,6 +42,7 @@ AVAILABLE_LLMS = [
     "deepseek-reasoner",
     # Local Ollama models
     "deepseek-r1:14b",
+    "qwen2.5-coder:32b",
 ]
 
 def create_client(model: str):
@@ -71,7 +72,7 @@ def create_client(model: str):
     elif 'gpt' in model or model.startswith("o1-") or model.startswith("o3-"):
         print(f"Using OpenAI API with model {model}.")
         return openai.OpenAI(), model
-    elif model == "deepseek-r1:14b":
+    elif model == "deepseek-r1:14b" or model == "qwen2.5-coder:32b":
         print(f"Using Ollama API with {model}.")
         client = ollama.Client()
         return client, model
@@ -129,7 +130,7 @@ def get_batch_responses_from_llm(
         new_msg_history = [
             new_msg_history + [{"role": "assistant", "content": c}] for c in content
         ]
-    elif model == "deepseek-r1:14b":
+    elif model in ["deepseek-r1:14b", "qwen2.5-coder:32b"]:
         new_msg_history = msg_history + [{"role": "user", "content": msg}]
         response = client.chat.completions.create(
             model=model,
@@ -298,7 +299,7 @@ def get_response_from_llm(
         content = response.choices[0].message.content
         new_msg_history = new_msg_history + [{"role": "assistant", "content": content}]
         reasoning_content = response.choices[0].message.reasoning_content
-    elif model == "deepseek-r1:14b":
+    elif model in ["deepseek-r1:14b", "qwen2.5-coder:32b"]:
         new_msg_history = msg_history + [{"role": "user", "content": msg}]
         response = client.chat(
             model=model,
@@ -661,7 +662,7 @@ def get_response_from_llm_with_context(
     if msg_history is None:
         msg_history = []
     
-    # Apply context management for DeepSeek R1
+    # Apply context management for DeepSeek R1 (skip for other models)
     if model == "deepseek-r1:14b":
         context_mgr = get_context_manager(model)
         

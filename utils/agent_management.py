@@ -43,7 +43,10 @@ class ChessAgentManager:
 
         for file_path in base_files:
             if os.path.isdir(file_path):
-                shutil.copytree(file_path, os.path.join(agent_dir, file_path))
+                dest_path = os.path.join(agent_dir, file_path)
+                if os.path.exists(dest_path):
+                    shutil.rmtree(dest_path)
+                shutil.copytree(file_path, dest_path)
             else:
                 shutil.copy2(file_path, agent_dir)
 

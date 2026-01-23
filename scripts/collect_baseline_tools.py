@@ -181,45 +181,75 @@ class EnhancedToolsBaselineCollector:
         
         start_time = time.time()
         
-        # Create enhanced chess analysis prompt with tool instructions
-        prompt = f"""You are analyzing a chess position with access to specialized chess tools. 
-Find the best move for this puzzle.
+        # Create enhanced chess analysis prompt with explicit tool encouragement
+        prompt = f"""Analyze this chess puzzle and find the best move using the available tools.
 
 Position (FEN): {puzzle['fen']}
 Puzzle Rating: {puzzle.get('rating', 'Unknown')}
 Themes: {', '.join(puzzle.get('themes', ['General']))}
 
-Available tools:
-- chess_position: Analyze the position for material, threats, and evaluation
-- chess_moves: Generate and validate legal moves
-- lichess_puzzle: Get additional puzzle information if needed
+IMPORTANT: Please use the chess_position tool to analyze this position first, then use chess_moves to find good candidate moves. This will help you find the correct solution.
 
-Use the tools strategically to analyze the position thoroughly, then provide your best move.
-
-Response format:
+After using the tools, provide your best move in this format:
 Best move: [your move in algebraic notation]
-Reasoning: [explain your analysis and why this move is best]
+Reasoning: [explain your analysis]
 """
         
         try:
-            # Track tool calls made during this puzzle
+            # Enhanced tool call tracking that captures from multiple sources
             tool_calls_made = []
+            all_logged_messages = []
             
-            def tool_logging(message):
-                """Log tool calls for analysis"""
+            def enhanced_tool_logging(message):
+                """Enhanced logging that captures all tool activity"""
+                all_logged_messages.append(message)
+                
+                # Method 1: Look for TOOL_CALL patterns in output
                 if "TOOL_CALL:" in message:
                     try:
                         import json
                         import re
                         # Extract tool call information
                         tool_call_pattern = r'TOOL_CALL:\s*(\{.*?\})'
-                        match = re.search(tool_call_pattern, message, re.DOTALL)
+                        matches = re.findall(tool_call_pattern, message, re.DOTALL)
+                        for match in matches:
+                            try:
+                                tool_data = json.loads(match)
+                                tool_calls_made.append({
+                                    'tool_name': tool_data.get('tool', 'unknown'),
+                                    'args': tool_data.get('args', {}),
+                                    'timestamp': time.time(),
+                                    'source': 'TOOL_CALL_pattern'
+                                })
+                            except json.JSONDecodeError:
+                                # Try with single quotes converted to double quotes
+                                try:
+                                    clean_match = match.replace("'", '"')
+                                    tool_data = json.loads(clean_match)
+                                    tool_calls_made.append({
+                                        'tool_name': tool_data.get('tool', 'unknown'),
+                                        'args': tool_data.get('args', {}),
+                                        'timestamp': time.time(),
+                                        'source': 'TOOL_CALL_pattern_cleaned'
+                                    })
+                                except:
+                                    pass
+                    except Exception:
+                        pass
+                
+                # Method 2: Look for "Tool Used:" patterns (from execution)
+                if "Tool Used:" in message:
+                    try:
+                        import re
+                        # Extract tool name from "Tool Used: tool_name" format
+                        tool_used_pattern = r'Tool Used:\s*(\w+)'
+                        match = re.search(tool_used_pattern, message)
                         if match:
-                            tool_data = json.loads(match.group(1))
                             tool_calls_made.append({
-                                'tool_name': tool_data.get('tool', 'unknown'),
-                                'args': tool_data.get('args', {}),
-                                'timestamp': time.time()
+                                'tool_name': match.group(1),
+                                'args': {},
+                                'timestamp': time.time(),
+                                'source': 'Tool_Used_pattern'
                             })
                     except Exception:
                         pass
@@ -229,12 +259,35 @@ Reasoning: [explain your analysis and why this move is best]
                 msg=prompt,
                 model="deepseek-r1:14b",
                 msg_history=[],
-                logging=tool_logging
+                logging=enhanced_tool_logging
             )
             
-            # Get the final response
+            # Method 3: Parse the final response for TOOL_CALL patterns
             if msg_history:
-                response = msg_history[-1].get('content', '')
+                full_conversation = ""
+                for msg in msg_history:
+                    content = msg.get('content', str(msg))
+                    if isinstance(content, list):
+                        content = ' '.join([block.get('text', str(block)) for block in content])
+                    elif not isinstance(content, str):
+                        content = str(content)
+                    full_conversation += content + "\n"
+                
+                # Look for additional tool calls in the conversation
+                import re
+                tool_call_pattern = r'TOOL_CALL:\s*\{[^}]+\}'
+                additional_calls = re.findall(tool_call_pattern, full_conversation, re.DOTALL)
+                for call in additional_calls:
+                    # Avoid duplicates
+                    if not any(call in str(existing['args']) for existing in tool_calls_made):
+                        tool_calls_made.append({
+                            'tool_name': 'detected_in_conversation',
+                            'args': {'raw_call': call},
+                            'timestamp': time.time(),
+                            'source': 'conversation_parsing'
+                        })
+                
+                response = full_conversation
             else:
                 response = ''
             
@@ -263,6 +316,7 @@ Reasoning: [explain your analysis and why this move is best]
                 'tool_calls_made': tool_calls_made,
                 'used_tools': len(tool_calls_made) > 0,
                 'full_response': response[:1000],  # More space for tool-enhanced responses
+                'debug_logs': all_logged_messages[:5],  # First 5 log messages for debugging
                 'error': None
             }
             
@@ -280,6 +334,7 @@ Reasoning: [explain your analysis and why this move is best]
                 'tool_calls_made': [],
                 'used_tools': False,
                 'full_response': '',
+                'debug_logs': [],
                 'error': str(e)
             }
     
